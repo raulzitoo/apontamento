@@ -2,14 +2,16 @@ package br.com.apontamento.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import br.com.apontamento.controllers.ApontamentoController;
 
 @EnableWebMvc
 @ComponentScan(basePackageClasses= {ApontamentoController.class})
-public class AppWebConfiguration {
+public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 
 	
 	@Bean
@@ -21,5 +23,12 @@ public class AppWebConfiguration {
 		
 		return resolver;
 	}
+	
+	@Override
+	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+		// TODO Auto-generated method stub
+		configurer.enable();
+	}
+	
 	
 }

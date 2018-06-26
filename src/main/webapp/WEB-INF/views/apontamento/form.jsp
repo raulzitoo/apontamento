@@ -10,20 +10,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<c:url value="/resource/css/" var="cssPath" />
+
+<link rel="stylesheet" href="${cssPath}/bootstrap.min.css">
+<c:url value="/resource/js/" var="jsPath"/>
+<script src="${jsPath }/bootstrap.min.js"></script>
+
+
 <title>Apontamento</title>
 </head>
 <body>
 <h1>Formulario</h1>
 
  <form action="${s:mvcUrl('AC#gravar').build() }" method="POST">
- 
- 	<div>
- 		<label>Data:</label>
- 		<input type="text" name="data">
- 	</div>
  	
  	
- 	<div>
+    <div >
+         <label>Data:</label>
+         <input type="text" name="data" />
+    </div>
+        
+	<div>
  		<label>Horas:</label>
  		<input type="text" name="hora">
  	</div>
